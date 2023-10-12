@@ -1,0 +1,16 @@
+{
+    "entryFile": "src/app.ts",
+    "noImplicitAdditionalProperties": "silently-remove-extras",
+    "controllerPathGlobs": ["./src/controllers/**/*controller.ts"],
+    "spec": {
+        "outputDirectory": "public",
+        "specVersion": 3,
+        "controllerPathGlobs": ["./src/controllers/**/*controller.ts"]
+      },
+    "routes": {
+        "routesDir": "./src/routes",
+        "middleware": "express"
+    }
+}
+
+

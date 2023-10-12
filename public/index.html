@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="img-src 'self' data: https://public.bnbstatic.com;">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js" defer></script>
+    <title>Deposit Form</title>
+</head>
+<body>
+    <div class="main-bg">
+        <div class="container">
+            <div class="form-card">
+                <div class="left-column">
+                    <label class="form-label">Beneficiary Wallet</label>
+                    <input id="buyerAddress" class="form-input" type="text" placeholder="Beneficiary wallet">
+                    <label class="form-label">Amount</label>
+                    <input id="amount" class="form-input" type="number" placeholder="Amount">
+                    <button id="depositButton" class="form-button">Deposit with Binance</button>
+                </div>
+                <div class="right-column">
+                    <p id="infoText" class="info-text">Please click on deposit with binance, a link and a QR code will be generated for you.</p>
+                    <div class="qr-box">
+                        <img id="qrImage" src="150.png" alt="QR Placeholder">
+                    </div>
+                    <p id="qrText" class="qr-text">Scan this QR code to perform the deposit or if not <a id="qrLink" href="#" class="qr-link">click on this link</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

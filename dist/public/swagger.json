@@ -1,0 +1,148 @@
+{
+    "components": {
+        "examples": {},
+        "headers": {},
+        "parameters": {},
+        "requestBodies": {},
+        "responses": {},
+        "schemas": {
+            "IBinanceLink": {
+                "properties": {
+                    "prepayId": {
+                        "type": "string"
+                    },
+                    "terminalType": {
+                        "type": "string"
+                    },
+                    "expireTime": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "qrcodeLink": {
+                        "type": "string"
+                    },
+                    "qrContent": {
+                        "type": "string"
+                    },
+                    "checkoutUrl": {
+                        "type": "string"
+                    },
+                    "deeplink": {
+                        "type": "string"
+                    },
+                    "universalUrl": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "prepayId",
+                    "terminalType",
+                    "expireTime",
+                    "qrcodeLink",
+                    "qrContent",
+                    "checkoutUrl",
+                    "deeplink",
+                    "universalUrl"
+                ],
+                "type": "object",
+                "additionalProperties": false
+            },
+            "IAPIResponse_IBinanceLink_": {
+                "properties": {
+                    "data": {
+                        "$ref": "#/components/schemas/IBinanceLink"
+                    },
+                    "status": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "data",
+                    "status",
+                    "message"
+                ],
+                "type": "object",
+                "additionalProperties": false
+            }
+        },
+        "securitySchemes": {}
+    },
+    "info": {
+        "title": "binance-bridge",
+        "version": "1.0.0",
+        "license": {
+            "name": "ISC"
+        },
+        "contact": {}
+    },
+    "openapi": "3.0.0",
+    "paths": {
+        "/binance/getBinancePaymentLink": {
+            "get": {
+                "operationId": "GetBinancePaymentLink",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/IAPIResponse_IBinanceLink_"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "binance"
+                ],
+                "security": [],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "buyerAddress",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "sellerAddress",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "amount",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "currency",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "USDT"
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "servers": [
+        {
+            "url": "/"
+        }
+    ]
+}
